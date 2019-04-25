@@ -1,6 +1,18 @@
 <template>
   <div>
   <div>
+    <v-card-text style="position: relative; padding:0px; top:25px;">
+    <v-btn
+      flat
+      icon
+      absolute
+      fab
+      top
+      small
+      left>
+      <v-icon color="white">arrow_back_ios</v-icon>
+    </v-btn>
+    </v-card-text>
    <v-img :src="program.photoCover" aspect-ratio="1.7"></v-img>
     <v-card-text style="position: relative; padding:0px">
       <v-btn
