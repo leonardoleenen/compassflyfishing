@@ -1,0 +1,92 @@
+{
+    "destinations": [
+        {
+            "id": "JURASSICLAKE",
+            "name": "Jurassic Lake",
+            "programs": [
+                {
+                    "id": "JLSTROBELLAKE",
+                    "name": "Strobel Lake",
+                    "claim": "The big trout Factory",
+                    "summary": "You may have heard about Jurassic Lake and think that's the name of the lake and that's because the fishing at Jurassic Lake Lodge's waters made our brand name world famous. But nothing is the same, location here is everything and we have the good fortune to hold more than 10 miles of the southwest coast of the lake including the best beats that made this destination and our brand name world famous.",
+                    "seasons": [
+                        {
+                            "id": "HIGH",
+                            "name": "High Season",
+                            "startDate": "Octubre 2019",
+                            "endDate": "Mayo 2020",
+                            "regularPrice": 6800
+                        },
+                        {
+                            "id": "MID",
+                            "name": "Middle Season",
+                            "startDate": "Octubre 2019",
+                            "endDate": "Mayo 2020",
+                            "regularPrice": 4800
+                        },
+                        {
+                            "id": "LOW",
+                            "name": "Middle Season",
+                            "startDate": "Octubre 2019",
+                            "endDate": "Mayo 2020",
+                            "regularPrice": 3200
+                        }
+                    ],
+                    "coverPhoto": "https://scontent.cdninstagram.com/vp/893ea7d6635bd32ac654f3094528b05f/5D4E46E7/t51.2885-15/sh0.08/e35/s640x640/56425677_107516803652711_3758545374627532887_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                },
+                {
+                    "id": "JLBARRANCOSORIVER",
+                    "name": "Barrancoso river",
+                    "claim": "From the headwaters to the inlet",
+                    "summary": "Jurassic Lake Lodge holds more than 25 km of the Barrancoso River including the only mouth. This river is the only significant tributary of Stobel Lake and runs almost entirely through our propriety. The Barrancoso River has earned the reputation as perhaps the best trout fishing river in the world and a challenging trout fishery where anglers have the opportunity to sight cast for trophy rainbow at every step.",
+                    "seasons": [
+                        {
+                            "id": "HIGH",
+                            "name": "High Season",
+                            "startDate": "Octubre 2019",
+                            "endDate": "Mayo 2020",
+                            "regularPrice": 6800
+                        },
+                        {
+                            "id": "MID",
+                            "name": "Middle Season",
+                            "startDate": "Octubre 2019",
+                            "endDate": "Mayo 2020",
+                            "regularPrice": 4800
+                        },
+                        {
+                            "id": "LOW",
+                            "name": "Middle Season",
+                            "startDate": "Octubre 2019",
+                            "endDate": "Mayo 2020",
+                            "regularPrice": 3200
+                        }
+                    ],
+                    "coverPhoto": "https://static.wixstatic.com/media/e71d9d_e060b5e0b0bc4436a64492b3b7d2e237~mv2.jpg/v1/crop/x_0,y_3,w_424,h_314/fill/w_593,h_440,al_c,lg_1,q_80/424A7194-barrancoso.webp"
+                }
+            ],
+            "photoAlbum": [
+                {
+                    "id": 1,
+                    "url": "https://static.wixstatic.com/media/e71d9d_cce3f45af86a40cc90b6d13aae07d775~mv2.jpg/v1/crop/x_0,y_14,w_424,h_291/fill/w_593,h_407,al_c,lg_1,q_80/moro.webp"
+                },
+                {
+                    "id": 2,
+                    "url": "https://scontent.cdninstagram.com/vp/734206008b44d17fa132f950e0fbd3c9/5D332DEB/t51.2885-15/sh0.08/e35/p640x640/56968362_382803478993925_4147455606012923857_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                },
+                {
+                    "id": 3,
+                    "url": "https://scontent.cdninstagram.com/vp/63e0481bbfd730f861549a5b1931541a/5D3DCA84/t51.2885-15/sh0.08/e35/s640x640/54511974_282376229358023_3286072216933115988_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                },
+                {
+                    "id": 4,
+                    "url": "https://scontent.cdninstagram.com/vp/7bad4e9ac6a3839090e59b2a8296524f/5D2BC4CC/t51.2885-15/sh0.08/e35/s640x640/56337574_609955762805306_5653147389414787484_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                },
+                {
+                    "id": 5,
+                    "url": "https://scontent.cdninstagram.com/vp/f1d0aa69ad99f9a73e954c5943bab552/5D353A5C/t51.2885-15/sh0.08/e35/s640x640/54277463_848547838813503_9155050304188091781_n.jpg?_nc_ht=scontent.cdninstagram.com"
+                }
+            ]
+        }
+    ]
+}
