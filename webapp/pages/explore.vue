@@ -59,9 +59,9 @@
   }
   .theme--light.v-subheader{
     color: #0277bd;
-    font-size: 25px;
-    padding-top 16px;
-    padding-bottom 8px;
+    font-size: 19px;
+    padding-top 30px;
+    padding-bottom 24px;
   }
  </style>
 
