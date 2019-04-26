@@ -1,26 +1,30 @@
 <template>
-  <v-layout>
-    <v-flex xs12 sm6 offset-sm3>
-      <v-card>
-        <v-img
+<v-layout>
+  <div class="mdc-card demo-card demo-basic-with-text-over-media">
+  <v-img
           class="white--text"
           height="350px"
           width="350px"
           :src="coverPhoto"
         >
-          <v-container fill-height fluid>
-            <v-layout fill-height>
-              <v-flex xs12 align-end flexbox>
-                <span class="headline">{{mantra}}</span>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-img>
-      </v-card>
-    </v-flex>
+        <div class="mdc-card__media-content demo-card__media-content">
+          <div class="demo-card__primary">
+            <h2 class="demo-card__title mdc-typography mdc-typography--headline6">{{mantra}}</h2>
+          </div>
+      </div>
+      </v-img>
+    </div>
   </v-layout>
 </template>
 
+<style>
+.demo-basic-with-text-over-media .demo-card__media-content{
+  display: flex;
+  align-items: flex-end;
+  bottom: 60px;
+  position: absolute;
+}
+</style>
 <script>
 export default {
   name: 'DestinationCard',

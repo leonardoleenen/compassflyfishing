@@ -32,10 +32,10 @@
             ></deal-card>
       </div>
     </div>
-    <v-subheader class='pl-0 ml-0' inset>Destinations</v-subheader>
+    <v-subheader class='pl-0 ml-0 ' inset>Destinations</v-subheader>
     <div class='scrolling-wrapper'>
-      <div v-for="(destination,id) in destinations" :key='id' class='card'>
-        <destination-card :mantra='destination.mantra' :coverPhoto='destination.coverPhoto' class='card'></destination-card>
+      <div v-for="(destination,id) in destinations" :key='id' class='card_destination'>
+        <destination-card :mantra='destination.mantra' :coverPhoto='destination.coverPhoto' class='card_destination'></destination-card>
       </div>
     </div>
   </div>
@@ -46,13 +46,24 @@
   overflow-x: scroll;
   overflow-y: hidden;
   white-space: nowrap;
-
-  .card {
+}
+.card {
+    display: inline-block;
+    padding-right 20px;
+    width: 330px;
+    height: 490px
+  }
+  .card_destination {
     display: inline-block;
     padding-right 20px;
   }
-}
-</style>
+  .theme--light.v-subheader{
+    color: #0277bd;
+    font-size: 25px;
+    padding-top 16px;
+    padding-bottom 8px;
+  }
+ </style>
 
 <script>
 import Deal from '../components/Deal'

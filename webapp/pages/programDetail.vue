@@ -1,9 +1,9 @@
 <template>
   <div>
     <v-progress-circular
-      :size="70"
+      :size="100"
       :width="7"
-      color="purple"
+      color="indigo"
       indeterminate
       v-if="loading"
     ></v-progress-circular>
@@ -115,6 +115,13 @@ caption {
 }
 content {
   padding: 1rem;
+}
+
+.v-progress-circular{
+  margin: auto;
+  width: 200px;
+  margin-top: 50%;
+  margin-left: 35%;
 }
 </style>
 
