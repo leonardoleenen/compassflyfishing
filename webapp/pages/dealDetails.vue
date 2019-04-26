@@ -38,7 +38,6 @@ export default {
     },
     deal() {
       const _query = this.$route.query
-      console.log(_query)
       const _destinations = this.$store.state.main.destinations
       if (_destinations.length !== 0) {
         const _destination = _destinations.filter(d => d.id === _query.destination)[0]

@@ -45,8 +45,7 @@ export default {
   */
   plugins: [
     '@/plugins/vuetify',
-    '~/plugins/syncfirebase.js',
-    '~/plugins/preload.js'
+    '~/plugins/syncfirebase.js'
   ],
 
   /*
@@ -69,6 +68,9 @@ export default {
     host: '0.0.0.0', // default: localhost
   },
 
+  router: {
+    middleware: 'router-auth'
+  },
   /*
   ** Build configuration
   */

@@ -12,14 +12,14 @@
           </v-flex>
         </v-layout>
         <v-flex pt-0 pb-0 pl-0>
-          <h3 class='headline mb-0'>from USD {{ price }},00</h3>
+          <h3 class='headline mb-0'>USD {{ price }},00</h3>
         </v-flex>
       </v-container>
     </v-card-title>
     <v-card-actions>
       <v-btn outline color='indigo'>Reserve</v-btn>
       <v-btn icon>
-        <v-icon>{{ user.favorite.find(e => e === programName) ? 'favorite_border' : 'favorite'}}</v-icon>
+        <v-icon>favorite</v-icon>
       </v-btn>
       <v-btn icon>
         <v-icon>share</v-icon>

@@ -80,6 +80,7 @@
 
 <script>
 export default {
+  name: 'backOfficeLayout',
   data: () => ({
     links: [
       'Home',
@@ -87,32 +88,6 @@ export default {
       'Contact Us'
     ],
     drawer: null
-  }),
-  mounted() {
-    /*
-    (function (b, c) {
-      const e = document.createElement('link')
-      e.rel = 'stylesheet'
-      e.type = 'text/css'
-      e.href = 'https://chatboxappdev.mybluemix.net/static/css/main.css'
-      document.getElementsByTagName('head')[0].appendChild(e)
-      const f = document.createElement('script')
-      f.onload = () => {
-        let g = null
-        if (c) {
-          g = 'previewInit'
-        } else {
-          const h = document.createElement('div')
-          g = 'cbinit'
-          h.id = 'cbinit'
-          document.body.append(h)
-        }
-        const chatbox = window.chatbox
-        chatbox.initChat(document.querySelector('#' + g), b, c)
-      }
-      f.src = 'https://chatboxappdev.mybluemix.net/static/js/chat-lib.js'
-      document.getElementsByTagName('head')[0].appendChild(f)
-    })('55b90326fbb8be3395008fc939642c5d', 0) */
-  }
+  })
 }
 </script>

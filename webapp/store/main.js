@@ -9,6 +9,6 @@ export const mutations = {
     state.destinations = Object.assign([], destinations)
   },
   loadUserData(state, user) {
-    state.user = user
+    state.user = Object.assign({}, user)
   }
 }
