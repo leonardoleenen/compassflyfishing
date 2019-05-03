@@ -1,0 +1,11 @@
+@import "@material/card/mdc-card";
+@import "../../globals/variables.scss";
+
+.my-card-content {
+  padding: 16px;
+}
+
+.my-card {
+  height: 350px;
+  width: 350px;
+}

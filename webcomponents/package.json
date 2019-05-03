@@ -1,5 +1,5 @@
 {
-  "name": "webcomponents",
+  "name": "flicktrip-webcomponents",
   "version": "0.0.1",
   "description": "Stencil Component Starter",
   "module": "dist/esm/index.js",
@@ -17,6 +17,10 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
+    "@material/button": "^2.0.0",
+    "@material/card": "^2.0.0",
+    "@material/icon-button": "^2.0.0",
+    "@material/typography": "^1.0.0",
     "@stencil/sass": "^0.2.1"
   },
   "devDependencies": {
