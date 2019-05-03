@@ -21,6 +21,9 @@ export namespace Components {
   interface FlProgramList {}
   interface FlProgramListAttributes extends StencilHTMLAttributes {}
 
+  interface FlProgramRating {}
+  interface FlProgramRatingAttributes extends StencilHTMLAttributes {}
+
   interface MyComponent {}
   interface MyComponentAttributes extends StencilHTMLAttributes {}
 }
@@ -30,6 +33,7 @@ declare global {
     'FlProgramCard': Components.FlProgramCard;
     'FlProgramDetail': Components.FlProgramDetail;
     'FlProgramList': Components.FlProgramList;
+    'FlProgramRating': Components.FlProgramRating;
     'MyComponent': Components.MyComponent;
   }
 
@@ -37,6 +41,7 @@ declare global {
     'fl-program-card': Components.FlProgramCardAttributes;
     'fl-program-detail': Components.FlProgramDetailAttributes;
     'fl-program-list': Components.FlProgramListAttributes;
+    'fl-program-rating': Components.FlProgramRatingAttributes;
     'my-component': Components.MyComponentAttributes;
   }
 
@@ -59,6 +64,12 @@ declare global {
     new (): HTMLFlProgramListElement;
   };
 
+  interface HTMLFlProgramRatingElement extends Components.FlProgramRating, HTMLStencilElement {}
+  var HTMLFlProgramRatingElement: {
+    prototype: HTMLFlProgramRatingElement;
+    new (): HTMLFlProgramRatingElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
@@ -69,6 +80,7 @@ declare global {
     'fl-program-card': HTMLFlProgramCardElement
     'fl-program-detail': HTMLFlProgramDetailElement
     'fl-program-list': HTMLFlProgramListElement
+    'fl-program-rating': HTMLFlProgramRatingElement
     'my-component': HTMLMyComponentElement
   }
 
@@ -76,6 +88,7 @@ declare global {
     'fl-program-card': HTMLFlProgramCardElement;
     'fl-program-detail': HTMLFlProgramDetailElement;
     'fl-program-list': HTMLFlProgramListElement;
+    'fl-program-rating': HTMLFlProgramRatingElement;
     'my-component': HTMLMyComponentElement;
   }
 

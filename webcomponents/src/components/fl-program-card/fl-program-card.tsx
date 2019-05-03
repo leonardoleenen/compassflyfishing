@@ -3,7 +3,6 @@ import { Component } from '@stencil/core';
 @Component({
     tag: 'fl-program-card',
     styleUrl: 'fl-program-card.scss',
-    shadow: false
 })
 export class FLProgramCard {
     componentDidLoad = () => {
@@ -28,13 +27,7 @@ export class FLProgramCard {
                 </div>
                 <div class="demo-card__primary">
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Lago Strobel Weekly</h2>
-                    <div class="rating">
-                    <button class="mdc-icon-button material-icons">start</button>
-                    <button class="mdc-icon-button material-icons">start</button>
-                    <button class="mdc-icon-button material-icons">start</button>
-                    <button class="mdc-icon-button material-icons">start</button>
-                    <button class="mdc-icon-button material-icons">start</button>
-                    </div>
+                    <fl-program-rating></fl-program-rating>
                     <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">Starting from $6,850</h3>
                     <div class="demo-card__secondary mdc-typography mdc-typography--body2">Visit ten places on our planet that are undergoing the biggest changes today.</div>
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Hot Dates</h2>
