@@ -89,7 +89,6 @@ export default {
     drawer: null
   }),
   mounted() {
-    /*
     (function (b, c) {
       const e = document.createElement('link')
       e.rel = 'stylesheet'
@@ -112,7 +111,7 @@ export default {
       }
       f.src = 'https://chatboxappdev.mybluemix.net/static/js/chat-lib.js'
       document.getElementsByTagName('head')[0].appendChild(f)
-    })('55b90326fbb8be3395008fc939642c5d', 0) */
+    })('55b90326fbb8be3395008fc939642c5d', 0)
   }
 }
 </script>

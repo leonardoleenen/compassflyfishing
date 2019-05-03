@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-stepper v-model='e6'  vertical>
-      <h1 class='pl-4 pt-2 headline'>Reserve Now</h1>
+      <h1 class='pl-4 pt-2 headline'>Request a date</h1>
       <v-stepper-step :complete='e6 > 1' step='1'>
         Welcome letter
         <small>Sumarrize if need</small>
@@ -9,13 +9,13 @@
       <v-stepper-content step='1'>
         <v-text-field
           v-model = 'email'
-          :rules = 'emailRules'
           label = 'E-mail'
           required></v-text-field>
         <v-btn color='primary' @click='e6 = 2'>Continue</v-btn>
       </v-stepper-content>
       <v-stepper-step :complete='e6 > 2' step='2'>Program Details</v-stepper-step>
       <v-stepper-content step='2'>
+        <itinerary></itinerary>
         <v-btn color='primary' @click='e6 = 3'>Continue</v-btn>
       </v-stepper-content>
       <v-stepper-step :complete='e6 > 3' step='4'>Choose date</v-stepper-step>
@@ -31,13 +31,19 @@
 </template>
 
 <script>
+import Itinerary from '../components/Itinerary'
+
 export default {
   name: 'Reserve now',
+  components: {
+    'itinerary': Itinerary
+  },
   data() {
     return {
       text: '',
       params: '',
-      e6: 1
+      e6: 1,
+      email: ''
     }
   },
   methods: {
