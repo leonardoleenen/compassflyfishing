@@ -24,6 +24,9 @@ export namespace Components {
   interface FlProgramRating {}
   interface FlProgramRatingAttributes extends StencilHTMLAttributes {}
 
+  interface FlProgramSliders {}
+  interface FlProgramSlidersAttributes extends StencilHTMLAttributes {}
+
   interface MyComponent {}
   interface MyComponentAttributes extends StencilHTMLAttributes {}
 }
@@ -34,6 +37,7 @@ declare global {
     'FlProgramDetail': Components.FlProgramDetail;
     'FlProgramList': Components.FlProgramList;
     'FlProgramRating': Components.FlProgramRating;
+    'FlProgramSliders': Components.FlProgramSliders;
     'MyComponent': Components.MyComponent;
   }
 
@@ -42,6 +46,7 @@ declare global {
     'fl-program-detail': Components.FlProgramDetailAttributes;
     'fl-program-list': Components.FlProgramListAttributes;
     'fl-program-rating': Components.FlProgramRatingAttributes;
+    'fl-program-sliders': Components.FlProgramSlidersAttributes;
     'my-component': Components.MyComponentAttributes;
   }
 
@@ -70,6 +75,12 @@ declare global {
     new (): HTMLFlProgramRatingElement;
   };
 
+  interface HTMLFlProgramSlidersElement extends Components.FlProgramSliders, HTMLStencilElement {}
+  var HTMLFlProgramSlidersElement: {
+    prototype: HTMLFlProgramSlidersElement;
+    new (): HTMLFlProgramSlidersElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
@@ -81,6 +92,7 @@ declare global {
     'fl-program-detail': HTMLFlProgramDetailElement
     'fl-program-list': HTMLFlProgramListElement
     'fl-program-rating': HTMLFlProgramRatingElement
+    'fl-program-sliders': HTMLFlProgramSlidersElement
     'my-component': HTMLMyComponentElement
   }
 
@@ -89,6 +101,7 @@ declare global {
     'fl-program-detail': HTMLFlProgramDetailElement;
     'fl-program-list': HTMLFlProgramListElement;
     'fl-program-rating': HTMLFlProgramRatingElement;
+    'fl-program-sliders': HTMLFlProgramSlidersElement;
     'my-component': HTMLMyComponentElement;
   }
 

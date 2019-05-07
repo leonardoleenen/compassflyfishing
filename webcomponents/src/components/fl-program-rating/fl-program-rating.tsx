@@ -15,6 +15,7 @@ export class ProgramRating {
             <button class="mdc-icon-button material-icons">start</button>
             <button class="mdc-icon-button material-icons">start</button>
             <button class="mdc-icon-button material-icons">start</button>
+            <div>32 reviews</div>
         </div>
     </div>;
   }
