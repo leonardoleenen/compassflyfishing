@@ -32,8 +32,7 @@ export class FLProgramList {
       <div class="contain">
         <div class="row">
           <div class="row__inner">
-            <a class="arrow arrow-prev" href="#item-3"></a>
-            <a class="arrow arrow-next" href="#item-2"></a>
+           
             {this.programs.map(program =>(
               <div class="tile">
                 <fl-program-card programName={program['name']} summary={program['summary']}></fl-program-card>
