@@ -12,15 +12,19 @@ export class FLProgramList {
   @State() programs: Array<{}> =[]
   @Prop() title: string
 
-  async componentWillLoad() {
-    await fetchPrograms().each(program => {
-      this.programs.push(program)
+  componentWillLoad() {
+    const aux =  []
+    fetchPrograms().then(programs => {
+      console.log(programs)
+      programs.each(program => {
+        console.log(program)
+        aux.push(program)
+      }).then( ()  =>  this.programs = aux)
     })
   }
-
   
-
   render() {
+    console.log(this.programs)
     return <div>
       <h2>
         {this.title}
