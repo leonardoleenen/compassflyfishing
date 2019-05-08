@@ -1,0 +1,94 @@
+@import "@material/chips/mdc-chips";
+
+.collapsible {
+    background-color: #eee;
+    color: #495f86;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 19px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    background-color: #ccc;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    padding: 0 18px;
+    display: block;
+    background-color: #f1f1f1;
+  }
+  .collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: white;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+  }
+
+  .contentCard{
+      padding: 16px;
+  }
+  caption{
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+    font-size: .875rem;
+    line-height: 1.375rem;
+    font-weight: 500;
+    margin-bottom: 8px;
+
+    text-transform: uppercase;
+  }
+
+  .mdc-typography--headline6{
+      color: #495f86;
+      letter-spacing: 1px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+  }
+  .mdc-typography--subtitle2{
+      margin-top: 4px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.6)
+  }
+  .m16{
+      margin-top: 16px;
+      margin-bottom:16px;
+  }
+  .mdc-chip{
+      border-radius:7px;
+      display: inline-block;
+      min-height: 60px;
+  }
+  .blue{
+     color: $font-color4
+  }
+  .contentChips{
+      width: 100%;
+      overflow: scroll;
+  }
+  .contain {
+    width: 100%;
+    overflow: scroll;
+  }
+  .row {
+    width: 100%;
+  }
+  .row__inner {
+    transition: 450ms -webkit-transform;
+    transition: 450ms transform;
+    transition: 450ms transform, 450ms -webkit-transform;
+    font-size: 0;
+    white-space: nowrap;
+    padding-bottom: 10px;
+  }

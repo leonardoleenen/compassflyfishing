@@ -28,17 +28,28 @@ export namespace Components {
   interface FlProgramDetail {}
   interface FlProgramDetailAttributes extends StencilHTMLAttributes {}
 
-  interface FlProgramList {}
-  interface FlProgramListAttributes extends StencilHTMLAttributes {}
+  interface FlProgramList {
+    'title': string;
+  }
+  interface FlProgramListAttributes extends StencilHTMLAttributes {
+    'title'?: string;
+  }
 
   interface FlProgramRating {}
   interface FlProgramRatingAttributes extends StencilHTMLAttributes {}
 
+  interface FlProgramSliders {}
+  interface FlProgramSlidersAttributes extends StencilHTMLAttributes {}
+
   interface FlRegister {
     'cleanDatabase': () => void;
     'loadPrograms': () => void;
+    'sync': boolean;
+    'syncData': () => void;
   }
-  interface FlRegisterAttributes extends StencilHTMLAttributes {}
+  interface FlRegisterAttributes extends StencilHTMLAttributes {
+    'sync'?: boolean;
+  }
 
   interface MyComponent {}
   interface MyComponentAttributes extends StencilHTMLAttributes {}
@@ -50,6 +61,7 @@ declare global {
     'FlProgramDetail': Components.FlProgramDetail;
     'FlProgramList': Components.FlProgramList;
     'FlProgramRating': Components.FlProgramRating;
+    'FlProgramSliders': Components.FlProgramSliders;
     'FlRegister': Components.FlRegister;
     'MyComponent': Components.MyComponent;
   }
@@ -59,6 +71,7 @@ declare global {
     'fl-program-detail': Components.FlProgramDetailAttributes;
     'fl-program-list': Components.FlProgramListAttributes;
     'fl-program-rating': Components.FlProgramRatingAttributes;
+    'fl-program-sliders': Components.FlProgramSlidersAttributes;
     'fl-register': Components.FlRegisterAttributes;
     'my-component': Components.MyComponentAttributes;
   }
@@ -88,6 +101,12 @@ declare global {
     new (): HTMLFlProgramRatingElement;
   };
 
+  interface HTMLFlProgramSlidersElement extends Components.FlProgramSliders, HTMLStencilElement {}
+  var HTMLFlProgramSlidersElement: {
+    prototype: HTMLFlProgramSlidersElement;
+    new (): HTMLFlProgramSlidersElement;
+  };
+
   interface HTMLFlRegisterElement extends Components.FlRegister, HTMLStencilElement {}
   var HTMLFlRegisterElement: {
     prototype: HTMLFlRegisterElement;
@@ -105,6 +124,7 @@ declare global {
     'fl-program-detail': HTMLFlProgramDetailElement
     'fl-program-list': HTMLFlProgramListElement
     'fl-program-rating': HTMLFlProgramRatingElement
+    'fl-program-sliders': HTMLFlProgramSlidersElement
     'fl-register': HTMLFlRegisterElement
     'my-component': HTMLMyComponentElement
   }
@@ -114,6 +134,7 @@ declare global {
     'fl-program-detail': HTMLFlProgramDetailElement;
     'fl-program-list': HTMLFlProgramListElement;
     'fl-program-rating': HTMLFlProgramRatingElement;
+    'fl-program-sliders': HTMLFlProgramSlidersElement;
     'fl-register': HTMLFlRegisterElement;
     'my-component': HTMLMyComponentElement;
   }
