@@ -12,8 +12,18 @@ import '@stencil/core';
 
 export namespace Components {
 
-  interface FlProgramCard {}
-  interface FlProgramCardAttributes extends StencilHTMLAttributes {}
+  interface FlProgramCard {
+    'background': string;
+    'destinationName': string;
+    'programName': string;
+    'summary': string;
+  }
+  interface FlProgramCardAttributes extends StencilHTMLAttributes {
+    'background'?: string;
+    'destinationName'?: string;
+    'programName'?: string;
+    'summary'?: string;
+  }
 
   interface FlProgramDetail {}
   interface FlProgramDetailAttributes extends StencilHTMLAttributes {}
@@ -23,6 +33,12 @@ export namespace Components {
 
   interface FlProgramRating {}
   interface FlProgramRatingAttributes extends StencilHTMLAttributes {}
+
+  interface FlRegister {
+    'cleanDatabase': () => void;
+    'loadPrograms': () => void;
+  }
+  interface FlRegisterAttributes extends StencilHTMLAttributes {}
 
   interface MyComponent {}
   interface MyComponentAttributes extends StencilHTMLAttributes {}
@@ -34,6 +50,7 @@ declare global {
     'FlProgramDetail': Components.FlProgramDetail;
     'FlProgramList': Components.FlProgramList;
     'FlProgramRating': Components.FlProgramRating;
+    'FlRegister': Components.FlRegister;
     'MyComponent': Components.MyComponent;
   }
 
@@ -42,6 +59,7 @@ declare global {
     'fl-program-detail': Components.FlProgramDetailAttributes;
     'fl-program-list': Components.FlProgramListAttributes;
     'fl-program-rating': Components.FlProgramRatingAttributes;
+    'fl-register': Components.FlRegisterAttributes;
     'my-component': Components.MyComponentAttributes;
   }
 
@@ -70,6 +88,12 @@ declare global {
     new (): HTMLFlProgramRatingElement;
   };
 
+  interface HTMLFlRegisterElement extends Components.FlRegister, HTMLStencilElement {}
+  var HTMLFlRegisterElement: {
+    prototype: HTMLFlRegisterElement;
+    new (): HTMLFlRegisterElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
@@ -81,6 +105,7 @@ declare global {
     'fl-program-detail': HTMLFlProgramDetailElement
     'fl-program-list': HTMLFlProgramListElement
     'fl-program-rating': HTMLFlProgramRatingElement
+    'fl-register': HTMLFlRegisterElement
     'my-component': HTMLMyComponentElement
   }
 
@@ -89,6 +114,7 @@ declare global {
     'fl-program-detail': HTMLFlProgramDetailElement;
     'fl-program-list': HTMLFlProgramListElement;
     'fl-program-rating': HTMLFlProgramRatingElement;
+    'fl-register': HTMLFlRegisterElement;
     'my-component': HTMLMyComponentElement;
   }
 

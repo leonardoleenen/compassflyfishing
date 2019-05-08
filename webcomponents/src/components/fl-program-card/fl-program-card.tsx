@@ -1,10 +1,16 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
 
 @Component({
     tag: 'fl-program-card',
     styleUrl: 'fl-program-card.scss',
 })
 export class FLProgramCard {
+
+    @Prop() programName: string
+    @Prop() destinationName: string
+    @Prop() summary: string 
+    @Prop() background: string
+
     componentDidLoad = () => {
         const el = document.getElementsByClassName('image_background')[0] as HTMLElement
         el.style.backgroundImage = 'url(https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg)'
@@ -26,10 +32,10 @@ export class FLProgramCard {
                     </div>
                 </div>
                 <div class="demo-card__primary">
-                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Lago Strobel Weekly</h2>
+                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">{this.programName}</h2>
                     <fl-program-rating></fl-program-rating>
                     <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">Starting from $6,850</h3>
-                    <div class="demo-card__secondary mdc-typography mdc-typography--body2">Visit ten places on our planet that are undergoing the biggest changes today.</div>
+                    <div class="demo-card__secondary mdc-typography mdc-typography--body2">{this.summary}</div>
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Hot Dates</h2>
                    
                     <div class="mdc-chip" tabindex="0">

@@ -22,7 +22,8 @@
     "@material/chips": "^2.0.0",
     "@material/icon-button": "^2.0.0",
     "@material/typography": "^1.0.0",
-    "@stencil/sass": "^0.2.1"
+    "@stencil/sass": "^0.2.1",
+    "dexie": "^2.0.4"
   },
   "devDependencies": {
     "@stencil/core": "~0.16.2"
