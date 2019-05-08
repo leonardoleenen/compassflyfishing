@@ -22,7 +22,7 @@ export class FLProgramList {
 
   render() {
     return <div>
-      <h2>
+      <h2 class="mdc-typography mdc-typography--headline6">
         {this.title}
       </h2>
       <div class="contain">
