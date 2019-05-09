@@ -1,0 +1,10 @@
+@import "@material/dialog/mdc-dialog";
+
+@media (max-width: 592px){
+    .mdc-dialog .mdc-dialog__surface {
+        max-width: calc(100vw );
+    }
+    .mdc-dialog .mdc-dialog__surface {
+        max-height: calc(100vh);
+    }
+      }

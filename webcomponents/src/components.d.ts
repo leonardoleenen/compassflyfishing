@@ -55,6 +55,9 @@ export namespace Components {
     'sync'?: boolean;
   }
 
+  interface FlTermsandconditions {}
+  interface FlTermsandconditionsAttributes extends StencilHTMLAttributes {}
+
   interface MyComponent {}
   interface MyComponentAttributes extends StencilHTMLAttributes {}
 }
@@ -67,6 +70,7 @@ declare global {
     'FlProgramRating': Components.FlProgramRating;
     'FlProgramSliders': Components.FlProgramSliders;
     'FlRegister': Components.FlRegister;
+    'FlTermsandconditions': Components.FlTermsandconditions;
     'MyComponent': Components.MyComponent;
   }
 
@@ -77,6 +81,7 @@ declare global {
     'fl-program-rating': Components.FlProgramRatingAttributes;
     'fl-program-sliders': Components.FlProgramSlidersAttributes;
     'fl-register': Components.FlRegisterAttributes;
+    'fl-termsandconditions': Components.FlTermsandconditionsAttributes;
     'my-component': Components.MyComponentAttributes;
   }
 
@@ -117,6 +122,12 @@ declare global {
     new (): HTMLFlRegisterElement;
   };
 
+  interface HTMLFlTermsandconditionsElement extends Components.FlTermsandconditions, HTMLStencilElement {}
+  var HTMLFlTermsandconditionsElement: {
+    prototype: HTMLFlTermsandconditionsElement;
+    new (): HTMLFlTermsandconditionsElement;
+  };
+
   interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {}
   var HTMLMyComponentElement: {
     prototype: HTMLMyComponentElement;
@@ -130,6 +141,7 @@ declare global {
     'fl-program-rating': HTMLFlProgramRatingElement
     'fl-program-sliders': HTMLFlProgramSlidersElement
     'fl-register': HTMLFlRegisterElement
+    'fl-termsandconditions': HTMLFlTermsandconditionsElement
     'my-component': HTMLMyComponentElement
   }
 
@@ -140,6 +152,7 @@ declare global {
     'fl-program-rating': HTMLFlProgramRatingElement;
     'fl-program-sliders': HTMLFlProgramSlidersElement;
     'fl-register': HTMLFlRegisterElement;
+    'fl-termsandconditions': HTMLFlTermsandconditionsElement;
     'my-component': HTMLMyComponentElement;
   }
 
