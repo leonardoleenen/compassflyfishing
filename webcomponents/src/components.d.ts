@@ -15,13 +15,17 @@ export namespace Components {
   interface FlProgramCard {
     'background': string;
     'destinationName': string;
+    'programId': string;
     'programName': string;
+    'startingPrice': number;
     'summary': string;
   }
   interface FlProgramCardAttributes extends StencilHTMLAttributes {
     'background'?: string;
     'destinationName'?: string;
+    'programId'?: string;
     'programName'?: string;
+    'startingPrice'?: number;
     'summary'?: string;
   }
 

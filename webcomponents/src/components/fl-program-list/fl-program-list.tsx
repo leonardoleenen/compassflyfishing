@@ -36,7 +36,12 @@ export class FLProgramList {
             <a class="arrow arrow-next" href="#item-2"></a>
             {this.programs.map(program =>(
               <div class="tile">
-                <fl-program-card programName={program['name']} summary={program['summary']}></fl-program-card>
+                <fl-program-card 
+                  programId = {program['id']} 
+                  programName={program['name']} 
+                  background = {program['photoCover']}
+                  startingPrice = {program['startingPrice']}
+                  summary={program['summary']}></fl-program-card>
               </div>
             ))
             }
