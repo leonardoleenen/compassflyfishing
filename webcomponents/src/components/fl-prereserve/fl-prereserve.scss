@@ -1,0 +1,88 @@
+@import "@material/chips/mdc-chips";
+
+.mdc-typography--headline6{
+      color: #495f86;
+      letter-spacing: 1px;
+      margin-top: 0px;
+      margin-bottom: 0px;
+  }
+  .mdc-typography--subtitle2{
+      margin-top: 4px;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.6)
+  }
+  .m16{
+      margin-top: 16px;
+      margin-bottom:16px;
+  }
+  .mdc-chip{
+      border-radius:7px;
+      display: inline-block;
+      min-height: 60px;
+  }
+  .blue{
+     color: $font-color4
+  }
+  .container{
+      padding: 16px;
+  }
+  ul{
+    list-style-type: none;
+    padding: 0px;
+  }
+  .mdc-list-item__graphic{
+      padding-right: 12px;
+      vertical-align: bottom;
+  }
+.mdc-typography--headline3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.mdc-dialog .mdc-dialog__content{
+      padding: 0px
+  }
+.mdc-icon-button__icon{
+    vertical-align: bottom;
+  }
+
+.mdc-checkbox__native-control{
+    width: 20px;
+    height: 20px;
+    vertical-align: top;
+}
+.mdc-list-item{
+    margin-bottom: 16px;
+}
+
+h1{
+    font-size: 50px;
+    color: #495f86;
+}
+.close{
+    padding: 0px;
+    height: 0px;
+    width: 24px;
+    height: 24px;
+}
+.mdc-list{
+    margin-top: 32px;
+}
+.mdc-dialog__actions{
+    justify-content: center;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+.text{
+    margin-left: 12px;
+    width: 80%;
+    display: inline-block;
+}
+@media (max-width: 592px){
+    .mdc-dialog .mdc-dialog__surface {
+        max-width: calc(100vw );
+    }
+    .mdc-dialog .mdc-dialog__surface {
+        max-height: calc(100vh);
+        min-height: calc(100vh);
+    }
+  }

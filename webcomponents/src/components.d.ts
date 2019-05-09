@@ -12,6 +12,9 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface FlPrereserve {}
+  interface FlPrereserveAttributes extends StencilHTMLAttributes {}
+
   interface FlProgramCard {
     'background': string;
     'destinationName': string;
@@ -60,6 +63,7 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'FlPrereserve': Components.FlPrereserve;
     'FlProgramCard': Components.FlProgramCard;
     'FlProgramDetail': Components.FlProgramDetail;
     'FlProgramList': Components.FlProgramList;
@@ -71,6 +75,7 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'fl-prereserve': Components.FlPrereserveAttributes;
     'fl-program-card': Components.FlProgramCardAttributes;
     'fl-program-detail': Components.FlProgramDetailAttributes;
     'fl-program-list': Components.FlProgramListAttributes;
@@ -81,6 +86,12 @@ declare global {
     'my-component': Components.MyComponentAttributes;
   }
 
+
+  interface HTMLFlPrereserveElement extends Components.FlPrereserve, HTMLStencilElement {}
+  var HTMLFlPrereserveElement: {
+    prototype: HTMLFlPrereserveElement;
+    new (): HTMLFlPrereserveElement;
+  };
 
   interface HTMLFlProgramCardElement extends Components.FlProgramCard, HTMLStencilElement {}
   var HTMLFlProgramCardElement: {
@@ -131,6 +142,7 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'fl-prereserve': HTMLFlPrereserveElement
     'fl-program-card': HTMLFlProgramCardElement
     'fl-program-detail': HTMLFlProgramDetailElement
     'fl-program-list': HTMLFlProgramListElement
@@ -142,6 +154,7 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'fl-prereserve': HTMLFlPrereserveElement;
     'fl-program-card': HTMLFlProgramCardElement;
     'fl-program-detail': HTMLFlProgramDetailElement;
     'fl-program-list': HTMLFlProgramListElement;
