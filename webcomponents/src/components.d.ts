@@ -33,6 +33,7 @@ export namespace Components {
   interface FlProgramDetailAttributes extends StencilHTMLAttributes {}
 
   interface FlProgramList {
+    'showDetailsHandler': (programId: any) => void;
     'title': string;
   }
   interface FlProgramListAttributes extends StencilHTMLAttributes {

@@ -10,6 +10,10 @@ export class FLProgramDetail {
     this.showItinerary = !this.showItinerary
   }
 
+  close = () => {
+    const el = document.querySelector('fl-program-list')
+    el.showDetailsHandler(null)
+  }
   programDetail = () => {
     return (<div class="mdc-dialog mdc-dialog--open mdc-dialog--scrollable"
       role="alertdialog"
@@ -119,7 +123,7 @@ export class FLProgramDetail {
             </div>
             </div>
               <footer class="mdc-dialog__actions">
-                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close">
+                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close" onClick={this.close}>
                   <span class="mdc-button__label">Cancel</span>
                 </button>
                 <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept">

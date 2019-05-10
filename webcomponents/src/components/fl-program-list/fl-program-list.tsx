@@ -1,4 +1,4 @@
-import { Component, State, Prop } from '@stencil/core';
+import { Component, State, Prop, Method } from '@stencil/core';
 import {fetchPrograms} from '../../globals/database';
 
 @Component({
@@ -11,6 +11,7 @@ export class FLProgramList {
 
   @State() programs: Array<{}> =[]
   @Prop() title: string
+  @State() showProgramDetail: boolean = false
 
   componentWillLoad() {
     const aux =  []
@@ -22,9 +23,24 @@ export class FLProgramList {
       }).then( ()  =>  this.programs = aux)
     })
   }
+
+  @Method()
+  showDetailsHandler(programId){
+    console.log(programId)
+    if (programId)
+      this.showProgramDetail = true
+    else
+      this.showProgramDetail = false 
+  }
+
+  
+  
   
   render() {
-    console.log(this.programs)
+    
+    if (this.showProgramDetail)
+      return <fl-program-detail></fl-program-detail>
+    
     return <div>
       <h2 class="mdc-typography mdc-typography--headline6">
         {this.title}

@@ -1,6 +1,6 @@
 {
   "name": "flicktrip-webcomponents",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Flicktrip WebComponents",
   "module": "dist/esm/index.js",
   "main": "dist/index.js",
@@ -24,8 +24,7 @@
     "@material/icon-button": "^2.0.0",
     "@material/typography": "^1.0.0",
     "@stencil/sass": "^0.2.1",
-    "dexie": "^2.0.4",
-    "hashids": "^1.2.2"
+    "dexie": "^2.0.4"
   },
   "devDependencies": {
     "@stencil/core": "~0.16.2"
