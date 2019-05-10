@@ -1,4 +1,5 @@
-@import "@material/chips/mdc-chips";
+
+@import "@material/notched-outline/mdc-notched-outline";
 
 .mdc-typography--headline6{
       color:$font-color4;
@@ -9,7 +10,7 @@
   .mdc-typography--subtitle2{
       margin-top: 4px;
       text-transform: uppercase;
-      color:$font-color1;
+      color: $font-color1;
   }
   .m16{
       margin-top: 16px;
@@ -24,7 +25,7 @@
      color: $font-color4
   }
   .container{
-      padding: 16px;
+      padding: 24px;
   }
   ul{
     list-style-type: none;
@@ -41,29 +42,16 @@
 .mdc-dialog .mdc-dialog__content{
       padding: 0px
   }
-.mdc-icon-button__icon{
-    vertical-align: bottom;
-  }
 
-.mdc-checkbox__native-control{
-    width: 20px;
-    height: 20px;
-    vertical-align: top;
-}
 .mdc-list-item{
     margin-bottom: 16px;
 }
 
-h1{
-    font-size: 50px;
-    color: $font-color4;
-}
 .close{
     padding: 0px;
     height: 0px;
     width: 24px;
     height: 24px;
-
     margin-top: 30px;
 }
 .mdc-list{
@@ -79,13 +67,44 @@ h1{
     width: 80%;
     display: inline-block;
 }
+.mdc-text-field{
+    width: 100%;
+    margin-bottom: 24px;
+}
+.center{
+    text-align: center;
+}
+.mtop30{
+    margin-top: 30%;
+}
+.mb20{
+    margin-bottom: 24px;
+}
+.top48{
+    margin-top: 48px;
+}
+.b30{
+    margin-bottom: 32px;
+}
+.mdc-text-field--with-leading-icon.mdc-text-field--outlined .mdc-text-field__input{
+    background: $mdc-theme-secondary;
+    border-radius: 4px;
+}
+.mdc-typography--headline6{
+    color:$font-color4;
+}
+
+.price{
+    font-size: 50px;
+    color: $font-color4;
+}
 @media (max-width: 592px){
     .mdc-dialog .mdc-dialog__surface {
         max-width: calc(100vw );
     }
     .mdc-dialog .mdc-dialog__surface {
         max-height: calc(100vh);
-        min-height: calc(100vh);
+        min-height: calc(95vh);
     }
     .mdc-dialog__actions{
         justify-content: center;

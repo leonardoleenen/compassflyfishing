@@ -12,6 +12,12 @@ import '@stencil/core';
 
 export namespace Components {
 
+  interface FlCkeckoutEmail {}
+  interface FlCkeckoutEmailAttributes extends StencilHTMLAttributes {}
+
+  interface FlCheckoutOnline {}
+  interface FlCheckoutOnlineAttributes extends StencilHTMLAttributes {}
+
   interface FlPrereserve {}
   interface FlPrereserveAttributes extends StencilHTMLAttributes {}
 
@@ -63,6 +69,8 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
+    'FlCkeckoutEmail': Components.FlCkeckoutEmail;
+    'FlCheckoutOnline': Components.FlCheckoutOnline;
     'FlPrereserve': Components.FlPrereserve;
     'FlProgramCard': Components.FlProgramCard;
     'FlProgramDetail': Components.FlProgramDetail;
@@ -75,6 +83,8 @@ declare global {
   }
 
   interface StencilIntrinsicElements {
+    'fl-ckeckout-email': Components.FlCkeckoutEmailAttributes;
+    'fl-checkout-online': Components.FlCheckoutOnlineAttributes;
     'fl-prereserve': Components.FlPrereserveAttributes;
     'fl-program-card': Components.FlProgramCardAttributes;
     'fl-program-detail': Components.FlProgramDetailAttributes;
@@ -86,6 +96,18 @@ declare global {
     'my-component': Components.MyComponentAttributes;
   }
 
+
+  interface HTMLFlCkeckoutEmailElement extends Components.FlCkeckoutEmail, HTMLStencilElement {}
+  var HTMLFlCkeckoutEmailElement: {
+    prototype: HTMLFlCkeckoutEmailElement;
+    new (): HTMLFlCkeckoutEmailElement;
+  };
+
+  interface HTMLFlCheckoutOnlineElement extends Components.FlCheckoutOnline, HTMLStencilElement {}
+  var HTMLFlCheckoutOnlineElement: {
+    prototype: HTMLFlCheckoutOnlineElement;
+    new (): HTMLFlCheckoutOnlineElement;
+  };
 
   interface HTMLFlPrereserveElement extends Components.FlPrereserve, HTMLStencilElement {}
   var HTMLFlPrereserveElement: {
@@ -142,6 +164,8 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
+    'fl-ckeckout-email': HTMLFlCkeckoutEmailElement
+    'fl-checkout-online': HTMLFlCheckoutOnlineElement
     'fl-prereserve': HTMLFlPrereserveElement
     'fl-program-card': HTMLFlProgramCardElement
     'fl-program-detail': HTMLFlProgramDetailElement
@@ -154,6 +178,8 @@ declare global {
   }
 
   interface ElementTagNameMap {
+    'fl-ckeckout-email': HTMLFlCkeckoutEmailElement;
+    'fl-checkout-online': HTMLFlCheckoutOnlineElement;
     'fl-prereserve': HTMLFlPrereserveElement;
     'fl-program-card': HTMLFlProgramCardElement;
     'fl-program-detail': HTMLFlProgramDetailElement;
