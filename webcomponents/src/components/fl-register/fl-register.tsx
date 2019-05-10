@@ -1,4 +1,8 @@
 import { Component, Method, Prop } from '@stencil/core';
+import { Store } from '@stencil/redux';
+import {configureStore} from '../../store';
+
+
 import {
   loadPrograms,
   cleanDatabase
@@ -11,7 +15,7 @@ import {
 })
 export class FLRegister {
  
-
+  @Prop({ context: 'store' }) store: Store;
   @Prop({mutable:true}) sync: boolean  
 
   @Method()
@@ -27,6 +31,10 @@ export class FLRegister {
   @Method()
   syncData() {
     this.sync = !this.sync
+  }
+
+  componentWillLoad() {
+    this.store.setStore(configureStore({}));
   }
   
   render() {
