@@ -1,11 +1,4 @@
-@import "@material/chips/mdc-chips";
 
-.mdc-typography--headline6{
-      color:$font-color4;
-      letter-spacing: 1px;
-      margin-top: 0px;
-      margin-bottom: 0px;
-  }
   .mdc-typography--subtitle2{
       margin-top: 4px;
       text-transform: uppercase;
@@ -15,14 +8,7 @@
       margin-top: 16px;
       margin-bottom:16px;
   }
-  .mdc-chip{
-      border-radius:7px;
-      display: inline-block;
-      min-height: 60px;
-  }
-  .blue{
-     color: $font-color4
-  }
+
   .container{
       padding: 16px;
   }
@@ -31,32 +17,29 @@
     padding: 0px;
   }
   .mdc-list-item__graphic{
-      padding-right: 12px;
-      vertical-align: bottom;
+      vertical-align: top;
   }
 .mdc-typography--headline3{
     margin-top: 0px;
     margin-bottom: 0px;
 }
 .mdc-dialog .mdc-dialog__content{
-      padding: 0px
+      padding: 0px;
+      background:$mdc-theme-primary;
+      color:$font-color5;
   }
 .mdc-icon-button__icon{
     vertical-align: bottom;
   }
 
-.mdc-checkbox__native-control{
-    width: 20px;
-    height: 20px;
-    vertical-align: top;
-}
+
 .mdc-list-item{
-    margin-bottom: 16px;
+    margin-bottom: 24px;
 }
 
 h1{
     font-size: 50px;
-    color: $font-color4;
+    font-weight: 600;
 }
 .close{
     padding: 0px;
@@ -78,6 +61,21 @@ h1{
     margin-left: 12px;
     width: 80%;
     display: inline-block;
+}
+.pb30{
+    padding-bottom: 32px;
+}
+.mb20{
+    margin-bottom: 20px;
+}
+.center{
+    text-align: center;
+}
+.fLR{
+    float: right;
+}
+.mr16{
+    margin-right: 16px;
 }
 @media (max-width: 592px){
     .mdc-dialog .mdc-dialog__surface {

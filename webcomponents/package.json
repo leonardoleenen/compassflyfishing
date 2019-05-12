@@ -22,6 +22,8 @@
     "@material/chips": "^2.0.0",
     "@material/dialog": "^2.0.0",
     "@material/icon-button": "^2.0.0",
+    "@material/notched-outline": "^1.1.1",
+    "@material/textfield": "^2.1.0",
     "@material/typography": "^1.0.0",
     "@stencil/redux": "^0.1.1",
     "@stencil/sass": "^0.2.1",
