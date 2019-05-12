@@ -1,5 +1,6 @@
 import { Component, State, Prop, Method } from '@stencil/core';
 import {fetchPrograms} from '../../globals/database';
+import { Store } from '@stencil/redux';
 
 @Component({
   tag: 'fl-program-list',
@@ -7,13 +8,14 @@ import {fetchPrograms} from '../../globals/database';
 })
 
 export class FLProgramList {
-
-
   @State() programs: Array<{}> =[]
-  @Prop() title: string
+  @State() activeProcess: string
   @State() showProgramDetail: boolean = false
+  @Prop({ context: 'store' }) store: Store;
+  @Prop() title: string
 
-  componentWillLoad() {
+  async componentWillLoad() {
+    await document.querySelector("fl-register").componentOnReady();
     const aux =  []
     fetchPrograms().then(programs => {
       console.log(programs)
@@ -22,6 +24,17 @@ export class FLProgramList {
         aux.push(program)
       }).then( ()  =>  this.programs = aux)
     })
+
+    this.store.mapStateToProps(this, (state) => {
+      console.log(state)
+      //this.activeProcess = state.activeProcess.processID
+      return {
+        activeProcess: state.activeProcess.processID
+        
+      }
+    });
+    
+    console.log(this)
   }
 
   @Method()
