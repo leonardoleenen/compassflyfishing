@@ -26,6 +26,7 @@ export namespace Components {
 
   interface FlProgramCard {
     'background': string;
+    'callBack': string;
     'destinationName': string;
     'programId': string;
     'programName': string;
@@ -34,6 +35,7 @@ export namespace Components {
   }
   interface FlProgramCardAttributes extends StencilHTMLAttributes {
     'background'?: string;
+    'callBack'?: string;
     'destinationName'?: string;
     'programId'?: string;
     'programName'?: string;

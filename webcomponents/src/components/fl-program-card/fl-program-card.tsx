@@ -1,4 +1,6 @@
 import { Component, Prop, State  } from '@stencil/core';
+import {openProgramCard} from '../../actions';
+import { Store, Action } from '@stencil/redux';
 import {favProgram} from '../../globals/database';
 
 
@@ -7,13 +9,15 @@ import {favProgram} from '../../globals/database';
     styleUrl: 'fl-program-card.scss'
 })
 export class FLProgramCard {
-
+    @Prop({ context: 'store' }) store: Store;
     @Prop() programName: string
     @Prop() destinationName: string
     @Prop() summary: string 
     @Prop() background: string
     @Prop() startingPrice: number
     @Prop() programId: string
+    @Prop() callBack: string 
+     
 
     @State() favProgram: boolean=false
 
@@ -21,16 +25,22 @@ export class FLProgramCard {
 
     imageId: string  
     favId: string 
+    openCard: Action 
 
     
-    componentDidLoad = () => {
+    componentDidLoad() {
         const el = document.getElementsByClassName(this.imageId)[0] as HTMLElement
         el.style.backgroundImage = 'url('+this.background +')'
     }
 
-    componentWillLoad = () => {
+    async componentWillLoad() {
+        await document.querySelector("fl-register").componentOnReady();
         this.imageId = 'mdc-card__media mdc-card__media--16-9 demo-card__media image_backgrund' + this.programId
         this.favId = 'FAVID' + this.programId
+
+        this.store.mapDispatchToProps(this, {
+            openCard: openProgramCard
+          })
     }
     
     componentDidUpdate = () => {
@@ -38,6 +48,7 @@ export class FLProgramCard {
        this.favProgram ? el.style.color = 'red' : el.style.color = 'white'
     }
 
+    /*
     showProgramDetailHandler(programId) {
         const el = document.querySelector('fl-program-list')
         this.showProgramDetail = !this.showProgramDetail
@@ -46,7 +57,7 @@ export class FLProgramCard {
         else
             el.showDetailsHandler(null)
         // this.showProgramDetail.emit(this.programId)
-    }
+    }*/
 
     render() {
         return (
@@ -67,7 +78,7 @@ export class FLProgramCard {
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">{this.programName}</h2>
                     <fl-program-rating></fl-program-rating>
                     <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">Starting from ${this.startingPrice}</h3>
-                    <div class="demo-card__secondary mdc-typography mdc-typography--body2" onClick={() => this.showProgramDetailHandler(this.programId)}>{this.summary}</div>
+                    <div class="demo-card__secondary mdc-typography mdc-typography--body2" onClick={() => this.openCard(this.programId)}>{this.summary}</div>
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Hot Dates</h2>
                    
                     <div class="mdc-chip" tabindex="0">

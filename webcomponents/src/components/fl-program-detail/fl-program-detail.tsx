@@ -1,19 +1,41 @@
-import { Component, State } from '@stencil/core';
+import { Component, State, Prop } from '@stencil/core';
+import {callBack, openPreReserve} from '../../actions';
+import { Store,Action } from '@stencil/redux';
 
 @Component({
   tag: 'fl-program-detail',
   styleUrl: 'fl-program-detail.scss'
 })
 export class FLProgramDetail {
+  @Prop({ context: 'store' }) store: Store;
   @State() showItinerary: boolean = false
+  @State() activeProcess: string
+
+  close: Action
+  openPreReserve: Action 
+
+
   handleShowItinerary() {
     this.showItinerary = !this.showItinerary
   }
 
-  close = () => {
-    const el = document.querySelector('fl-program-list')
-    el.showDetailsHandler(null)
+
+  async componentWillLoad() {
+    await document.querySelector("fl-register").componentOnReady()
+    this.store.mapStateToProps(this, (state) => {
+      this.activeProcess = state.activeProcess.processID
+      return {
+        activeProcess: state.activeProcess.operationType
+      }
+    })
+
+    this.store.mapDispatchToProps(this, {
+      close: callBack,
+      openPreReserve: openPreReserve
+    })
   }
+  
+
   programDetail = () => {
     return (<div class="mdc-dialog mdc-dialog--open mdc-dialog--scrollable"
       role="alertdialog"
@@ -75,6 +97,8 @@ export class FLProgramDetail {
     </div>)
   }
   render() {
+    
+
     return (
       <div class="mdc-dialog mdc-dialog--open "
         role="alertdialog"
@@ -123,10 +147,10 @@ export class FLProgramDetail {
             </div>
             </div>
               <footer class="mdc-dialog__actions">
-                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close" onClick={this.close}>
+                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="close" onClick={() => this.close('PROGRAM LIST')}>
                   <span class="mdc-button__label">Cancel</span>
                 </button>
-                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept">
+                <button type="button" class="mdc-button mdc-dialog__button" data-mdc-dialog-action="accept" onClick={this.openPreReserve}>
                   <span class="mdc-button__label">Reserve this spot</span>
                 </button>
               </footer>

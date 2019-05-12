@@ -1,4 +1,7 @@
-import { Component } from '@stencil/core';
+import { Component, Prop,State } from '@stencil/core';
+import {callBack} from '../../actions';
+import { Store,Action } from '@stencil/redux';
+
 
 @Component({
   tag: 'fl-prereserve',
@@ -6,6 +9,24 @@ import { Component } from '@stencil/core';
 })
 export class PreReserve {
 
+  @Prop({ context: 'store' }) store: Store;
+  @State() activeProcess: string
+
+  close: Action 
+
+  async componentWillLoad() {
+    await document.querySelector("fl-register").componentOnReady()
+    this.store.mapStateToProps(this, (state) => {
+      this.activeProcess = state.activeProcess.processID
+      return {
+        activeProcess: state.activeProcess.operationType
+      }
+    })
+
+    this.store.mapDispatchToProps(this, {
+      close: callBack
+    })
+  }
 
   render() {
     return <div class="mdc-dialog mdc-dialog--open "
@@ -17,7 +38,7 @@ export class PreReserve {
         <div class="mdc-dialog__surface">
           <div class="mdc-dialog__content" id="my-dialog-content">
             <div class="container">
-              <button class="mdc-icon-button material-icons close" data-mdc-dialog-action="close">close</button>
+              <button class="mdc-icon-button material-icons close" data-mdc-dialog-action="close" onClick={() => this.close('PROGRAM LIST')}>close</button>
 
               <h2 class="mdc-typography--headline3">First Half Week</h2>
               <h4 class="mdc-typography--headline6">Jurassic Lake</h4>
