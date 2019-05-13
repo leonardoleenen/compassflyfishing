@@ -82,7 +82,8 @@ h2{
     
     .contain {
       width: 100%;
-      overflow: scroll;
+      // overflow: scroll;
+      scroll-snap-align: start;
     }
     .row {
       width: 100%;
