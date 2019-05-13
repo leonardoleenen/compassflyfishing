@@ -85,7 +85,18 @@ export class PreReserve {
               </ul>
               <h1>$3,870</h1>
 
-              <div class="drawer">
+             
+            </div>
+
+          </div>
+          <footer class="mdc-dialog__actions">
+          
+
+            <button type="button" class="demo-button mdc-button mdc-button--outlined mdc-ripple-upgraded" data-mdc-dialog-action="accept" onClick={this.openDrawer}>
+              <span class="mdc-button__label">Continue</span>
+            </button>
+          </footer>
+          <div class="drawer">
                 <ul class="command-list mdc-list">
                   <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0">
                     <span class="mdc-list-item__graphic material-icons" aria-hidden="true">credit_card</span>
@@ -114,15 +125,6 @@ export class PreReserve {
                  
                 </ul>
               </div>
-            </div>
-
-          </div>
-          <footer class="mdc-dialog__actions">
-
-            <button type="button" class="demo-button mdc-button mdc-button--outlined mdc-ripple-upgraded" data-mdc-dialog-action="accept" onClick={this.openDrawer}>
-              <span class="mdc-button__label">Continue</span>
-            </button>
-          </footer>
         </div>
       </div>
       <div class="mdc-dialog__scrim"></div>

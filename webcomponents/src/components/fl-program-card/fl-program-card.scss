@@ -7,7 +7,7 @@
 }
 
 .mdc-card {
-  width: 320px;
+  width: 360px;
 }
 .demo-card__primary{
   padding: 16px;
@@ -25,6 +25,7 @@
 .mdc-typography--headline6{
   margin-bottom: 0px;
   margin-top: 10px;
+  text-overflow: initial
  
 }
 .mdc-typography--body2{

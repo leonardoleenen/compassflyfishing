@@ -15,9 +15,8 @@ export class FLProgramSliders {
                 <img id="image3" src="https://i.imgur.com/fLuHO.jpg" />
                 <img id="image4" src="https://i.imgur.com/5Sd3Q.jpg" />
                 <div class="app-fab--absolute white">
-                    <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded " aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
-                        <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
-                        <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                    <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                       favorite_border
                     </button>
                     <button class="mdc-icon-button material-icons mdc-card__action mdc-card__action--icon--unbounded" title="Share" data-mdc-ripple-is-unbounded="true">share</button>
                 </div>

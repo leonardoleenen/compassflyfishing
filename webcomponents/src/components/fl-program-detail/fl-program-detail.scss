@@ -1,4 +1,3 @@
-@import "@material/chips/mdc-chips";
 
 .collapsible {
     background-color: #eee;
@@ -59,7 +58,7 @@ caption{
   .mdc-typography--subtitle2{
       margin-top: 4px;
       text-transform: uppercase;
-      color: rgba(0,0,0,0.6)
+      color: rgba(0,0,0,0.6);
   }
   .m16{
       margin-top: 16px;
@@ -71,7 +70,7 @@ caption{
       min-height: 60px;
   }
   .blue{
-     color: $font-color4
+     color: $font-color4;
   }
   .contentChips{
       width: 100%;
@@ -94,17 +93,37 @@ caption{
   }
 
   .mdc-dialog .mdc-dialog__content{
-      padding: 0px
+      padding: 0px;
   }
 .mdc-icon-button__icon{
     vertical-align: bottom;
   }
 
-  @media (max-width: 592px){
-.mdc-dialog .mdc-dialog__surface {
-    max-width: calc(100vw );
+  .mdc-icon-button {
+    width: 24px;
+    height: 24px;
+    color:$font-color1;
+    margin-top: 30px;  
 }
-.mdc-dialog .mdc-dialog__surface {
-    max-height: calc(100vh);
+
+.command-list { 
+  padding-left: 16px;
+  margin-top: 0px;
 }
+ .close{
+    padding: 0px;
+    width: 24px;
+    height: 24px;
+    margin-top: 30px;
+}
+ @media (max-width: 592px){
+.mdc-dialog .mdc-dialog__surface {
+    max-width: calc(100vw ) !important;
+    min-width: calc(100vw ) ;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    max-height: calc(100vh -50px);
+}
+
+
   }

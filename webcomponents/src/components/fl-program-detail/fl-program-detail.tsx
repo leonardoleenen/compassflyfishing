@@ -62,8 +62,8 @@ export class FLProgramDetail {
               <div class="row">
                 <div class="row__inner">
                   <div class="mdc-chip" tabindex="0">
-                    <div class="mdc-chip__text">Jan 04 to 12</div>
-                    <div class="mdc-chip__text blue">ARG $300000</div>
+                    <div class="mdc-chip__text">Jan 04 to 12
+                    <p class=" blue">ARG $300000</p></div> 
                   </div>
                   <div class="mdc-chip" tabindex="0">
                     <div class="mdc-chip__text">Jan 04 to 12</div>
@@ -120,20 +120,20 @@ export class FLProgramDetail {
                   <div class="row">
                     <div class="row__inner">
                       <div class="mdc-chip" tabindex="0">
-                        <div class="mdc-chip__text">Jan 04 to 12</div>
-                        <div class="mdc-chip__text blue">ARG $300000</div>
+                      <div class="mdc-chip__text">Jan 04 to 12
+                    <div class=" blue">ARG $300000</div></div> 
                       </div>
                       <div class="mdc-chip" tabindex="0">
-                        <div class="mdc-chip__text">Jan 04 to 12</div>
-                        <div class="mdc-chip__text blue">ARG $300000</div>
+                      <div class="mdc-chip__text">Jan 04 to 12
+                    <div class=" blue">ARG $300000</div></div> 
                       </div>
                       <div class="mdc-chip" tabindex="0">
-                        <div class="mdc-chip__text">Jan 04 to 12</div>
-                        <div class="mdc-chip__text blue">ARG $300000</div>
+                      <div class="mdc-chip__text">Jan 04 to 12
+                    <div class=" blue">ARG $300000</div></div> 
                       </div>
                       <div class="mdc-chip" tabindex="0">
-                        <div class="mdc-chip__text">Jan 04 to 12</div>
-                        <div class="mdc-chip__text blue">ARG $300000</div>
+                      <div class="mdc-chip__text">Jan 04 to 12
+                    <div class=" blue">ARG $300000</div></div> 
                       </div>
                     </div>
                   </div>
