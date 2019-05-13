@@ -28,6 +28,20 @@ export class PreReserve {
     })
   }
 
+  openDrawer() {
+    const drawer  = document.getElementsByClassName('drawer')[0]
+    drawer.classList.add('transition')
+    const surface =  document.getElementsByClassName('mdc-dialog__surface')[0] as HTMLElement
+    surface.style.backgroundColor="#ccc"
+  }
+
+  closeDrawer() {
+    const drawer  = document.getElementsByClassName('drawer')[0]
+    drawer.classList.remove('transition')
+    const surface = document.getElementsByClassName('mdc-dialog__surface')[0] as HTMLElement
+    surface.style.backgroundColor="#fff"
+  }
+
   render() {
     return <div class="mdc-dialog mdc-dialog--open "
       role="alertdialog"
@@ -70,12 +84,42 @@ export class PreReserve {
                 </li>
               </ul>
               <h1>$3,870</h1>
+
+              <div class="drawer">
+                <ul class="command-list mdc-list">
+                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0">
+                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">credit_card</span>
+                    I want to reserve right now
+                  </li>
+                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" >
+                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">chat_bubble_outline</span>
+                    I want to chat with sales assistant
+                  </li>
+                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" >
+                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">call</span>
+                    Please, call me back
+                  </li>
+                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" >
+                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">email</span>
+                    Only Info, I want to reserve later
+                  </li>
+                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" >
+                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">share</span>
+                    Send this deal to a friend
+                  </li>
+                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0"  onClick={this.closeDrawer}>
+                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">close</span>
+                    Close
+                  </li>
+                 
+                </ul>
+              </div>
             </div>
 
           </div>
           <footer class="mdc-dialog__actions">
 
-            <button type="button" class="demo-button mdc-button mdc-button--outlined mdc-ripple-upgraded" data-mdc-dialog-action="accept">
+            <button type="button" class="demo-button mdc-button mdc-button--outlined mdc-ripple-upgraded" data-mdc-dialog-action="accept" onClick={this.openDrawer}>
               <span class="mdc-button__label">Continue</span>
             </button>
           </footer>

@@ -58,6 +58,44 @@ h1{
     font-size: 50px;
     color: $font-color4;
 }
+
+.drawer {
+    position: absolute;
+    bottom: 0;
+    background: #ffffff;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+    height: 0px;
+    overflow:hidden;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    margin-top:400px;
+}
+
+.transition {
+    margin-top:221px;
+    height:300px;
+	padding-top: 10px;
+}
+
+.command-list { 
+    padding-left: 16px;
+}
+
+.drawer.closed {
+	max-height: 0;
+}
+
+.disabled {
+    background-color: #cccccc
+}
+
+
+
+
 .close{
     padding: 0px;
     height: 0px;
@@ -92,5 +130,9 @@ h1{
         padding-bottom: 24px;
         padding-top: 24px;
         margin-bottom: 30px;
+    }
+
+    .command-list { 
+        padding-left: 16px;
     }
   }
