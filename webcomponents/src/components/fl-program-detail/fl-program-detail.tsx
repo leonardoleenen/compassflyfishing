@@ -1,6 +1,7 @@
 import { Component, State, Prop } from '@stencil/core';
 import {callBack, openPreReserve} from '../../actions';
 import { Store,Action } from '@stencil/redux';
+// import {favProgram,fetchAvailability} from '../../globals/database';
 
 @Component({
   tag: 'fl-program-detail',
@@ -34,6 +35,8 @@ export class FLProgramDetail {
       close: callBack,
       openPreReserve: openPreReserve
     })
+
+
   }
   
 

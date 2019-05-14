@@ -81,6 +81,11 @@ export const fetchAvailability = (programId) => {
     return db.availability.get(programId)
 }
 
+
+export const fetchProgram = (programId) => {
+    // return  db.availability.where('programId').equals(programId)
+    return db.programs.get(programId)
+}
 export const favProgram = async(programId,componentId) => {
     if (await db.userSettings.where({userId: 'anonymous'}).count() === 0){
         db.userSettings.add({userId:'anonymous', favProgram:[{

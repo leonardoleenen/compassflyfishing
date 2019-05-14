@@ -1,7 +1,10 @@
+import {fetchProgram} from './globals/database';
+
 export const openProgramCard = programId =>  {
+
     return dispatch => {
         dispatch({ type: 'OPEN PROGRAM CARD', payload: {
-            programId,
+            program: fetchProgram(programId),
             operationType: 'OPEN PROGRAM CARD'
         } })
     }
