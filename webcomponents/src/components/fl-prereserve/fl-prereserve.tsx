@@ -53,8 +53,8 @@ export class PreReserve {
             <div class="container">
               <button class="mdc-icon-button material-icons close" data-mdc-dialog-action="close" onClick={() => this.close('PROGRAM LIST')}>close</button>
 
-              <h2 class="mdc-typography--headline3">First Half Week</h2>
-              <h4 class="mdc-typography--headline6">Jurassic Lake</h4>
+              <h2 class="mdc-typography--headline1">First Half Week</h2>
+              <h4 class="mdc-typography--headline2">Jurassic Lake</h4>
               <div class="m16 mdc-typography mdc-typography--body2">Jurassic Lake Lodge is the original world-class Fly fishing Lodge located in one of the most remote and wild places of Argentine Patagonia. Our lodge is strategically located at a walking distance from the inlet of the only significant tributary of Strobel Lake, the Barrancoso River. This crystal clear river together with the Lake are undoubtedly the best system in the world for trophy rainbow trout fishing.</div>
               <ul class="mdc-list">
                 <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" id="7e71316e-cc5e-4e8a-aab1-0e2e33e23557">
@@ -91,34 +91,34 @@ export class PreReserve {
           <footer class="mdc-dialog__actions">
           
 
-            <button type="button" class="demo-button mdc-button mdc-button--outlined mdc-ripple-upgraded" data-mdc-dialog-action="accept" onClick={() => this.handleDrawer()}>
+            <button type="button" class="demo-button mdc-button  mdc-ripple-upgraded" data-mdc-dialog-action="accept" onClick={() => this.handleDrawer()}>
               <span class="mdc-button__label">Continue</span>
             </button>
           </footer>
           <div class={this.openDrawer ? 'drawer transition' : 'drawer'}>
                 <ul class="command-list mdc-list">
                   <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" onClick={() => this.openReserveNow()}>
-                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">credit_card</span>
+                    <span class="mdc-list-item__graphic material-icons mr32" aria-hidden="true">credit_card</span>
                     I want to reserve right now
                   </li>
                   <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" >
-                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">chat_bubble_outline</span>
+                    <span class="mdc-list-item__graphic material-icons mr32" aria-hidden="true">chat_bubble_outline</span>
                     I want to chat with sales assistant
                   </li>
                   <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" >
-                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">call</span>
+                    <span class="mdc-list-item__graphic material-icons mr32" aria-hidden="true">call</span>
                     Please, call me back
                   </li>
                   <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" onClick={() => this.openSendEmailInfo()}>
-                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">email</span>
+                    <span class="mdc-list-item__graphic material-icons mr32" aria-hidden="true">email</span>
                     Only Info, I want to reserve later
                   </li>
                   <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" >
-                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">share</span>
+                    <span class="mdc-list-item__graphic material-icons mr32" aria-hidden="true">share</span>
                     Send this deal to a friend
                   </li>
                   <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0"  onClick={() => this.handleDrawer()}>
-                    <span class="mdc-list-item__graphic material-icons" aria-hidden="true">close</span>
+                    <span class="mdc-list-item__graphic material-icons mr32" aria-hidden="true">close</span>
                     Close
                   </li>
                  
