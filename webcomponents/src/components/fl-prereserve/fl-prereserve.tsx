@@ -1,5 +1,5 @@
 import { Component, Prop,State } from '@stencil/core';
-import {callBack} from '../../actions';
+import {callBack,openSendEmailInfo,openReserveNow} from '../../actions';
 import { Store,Action } from '@stencil/redux';
 
 
@@ -13,6 +13,9 @@ export class PreReserve {
   @State() activeProcess: string
 
   close: Action 
+  openSendEmailInfo: Action
+  openReserveNow: Action
+
 
   async componentWillLoad() {
     await document.querySelector("fl-register").componentOnReady()
@@ -24,7 +27,9 @@ export class PreReserve {
     })
 
     this.store.mapDispatchToProps(this, {
-      close: callBack
+      close: callBack,
+      openSendEmailInfo,
+      openReserveNow
     })
   }
 
@@ -98,7 +103,7 @@ export class PreReserve {
           </footer>
           <div class="drawer">
                 <ul class="command-list mdc-list">
-                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0">
+                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" onClick={() => this.openReserveNow()}>
                     <span class="mdc-list-item__graphic material-icons" aria-hidden="true">credit_card</span>
                     I want to reserve right now
                   </li>
@@ -110,7 +115,7 @@ export class PreReserve {
                     <span class="mdc-list-item__graphic material-icons" aria-hidden="true">call</span>
                     Please, call me back
                   </li>
-                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" >
+                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" onClick={() => this.openSendEmailInfo()}>
                     <span class="mdc-list-item__graphic material-icons" aria-hidden="true">email</span>
                     Only Info, I want to reserve later
                   </li>

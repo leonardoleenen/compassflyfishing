@@ -48,17 +48,24 @@ export class FLProgramList {
   
   render() {
     
-    let modal = ''
+    let modal = null
 
     if ( this.activeProcess === 'OPEN PROGRAM CARD')
       modal = <fl-program-detail></fl-program-detail>
   
     if ( this.activeProcess === 'OPEN PRE RESERVE')
-    modal = <fl-prereserve></fl-prereserve>
-    
+      modal = <fl-prereserve></fl-prereserve>
 
-    console.log(modal,this.activeProcess)
-   
+    if ( this.activeProcess === 'OPEN SEND EMAIL INFO'){
+      modal = <fl-ckeckout-email></fl-ckeckout-email>
+    }
+      
+    if ( this.activeProcess === 'OPEN RESERVE NOW')
+      modal = <fl-checkout-online></fl-checkout-online>
+  
+    if ( this.activeProcess === 'SHOW CONFIRMATION')
+      modal = <fl-confirmation-checkout></fl-confirmation-checkout>
+
     
     return <div>
       {modal}

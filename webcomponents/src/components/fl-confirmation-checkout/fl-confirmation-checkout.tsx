@@ -1,11 +1,34 @@
-import { Component } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
+import {callBack} from '../../actions';
+import { Store,Action } from '@stencil/redux';
 
 @Component({
   tag: 'fl-confirmation-checkout',
   styleUrl: 'fl-confirmation-checkout.scss',
+  shadow: true
+  
 })
 export class confirmationCheckout {
  
+  @Prop({ context: 'store' }) store: Store;
+  @State() activeProcess: string
+
+  close: Action 
+
+  async componentWillLoad() {
+    await document.querySelector("fl-register").componentOnReady()
+    this.store.mapStateToProps(this, (state) => {
+      this.activeProcess = state.activeProcess.processID
+      return {
+        activeProcess: state.activeProcess.operationType
+      }
+    })
+
+    this.store.mapDispatchToProps(this, {
+      close: callBack
+    })
+  }
+
   
   render() {
     return <div class="mdc-dialog mdc-dialog--open "
@@ -17,7 +40,7 @@ export class confirmationCheckout {
       <div class="mdc-dialog__surface">
           <div class="mdc-dialog__content" id="my-dialog-content">
           <div class="container">
-          <button class="mdc-icon-button material-icons close" data-mdc-dialog-action="close">close</button>
+          <button class="mdc-icon-button material-icons close" data-mdc-dialog-action="close" onClick={() => this.close('PROGRAM LIST')}>close</button>
           <button class="mdc-icon-button material-icons close fLR" data-mdc-dialog-action="close">vertical_align_bottom</button>
           <button class="mdc-icon-button material-icons close fLR mr16" data-mdc-dialog-action="close">calendar_today</button>
           

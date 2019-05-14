@@ -28,6 +28,14 @@ export const processReducer = (state = { ...initialState.activeProcess }, action
       return { ...state, ...action.payload }
     case 'OPEN PRE RESERVE':
       return { ...state, ...action.payload }
+    case 'OPEN SEND EMAIL INFO':
+      return { ...state, ...action.payload }
+    case 'OPEN RESERVE NOW':
+      return { ...state, ...action.payload }
+    case 'INFO EMAIL WAS SEND':
+      return { ...state, ...action.payload }
+    case 'SHOW CONFIRMATION':
+      return { ...state, ...action.payload }
     default:
       return state
   }

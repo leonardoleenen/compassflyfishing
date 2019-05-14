@@ -1,4 +1,6 @@
-import { Component } from '@stencil/core';
+import { Component, Prop,State } from '@stencil/core';
+import {callBack, showConfirmation} from '../../actions';
+import { Store,Action } from '@stencil/redux';
 
 @Component({
   tag: 'fl-checkout-online',
@@ -6,6 +8,25 @@ import { Component } from '@stencil/core';
 })
 export class CheckoutOnline {
 
+  @Prop({ context: 'store' }) store: Store;
+  @State() activeProcess: string
+
+  close: Action 
+  showConfirmation: Action
+  async componentWillLoad() {
+    await document.querySelector("fl-register").componentOnReady()
+    this.store.mapStateToProps(this, (state) => {
+      this.activeProcess = state.activeProcess.processID
+      return {
+        activeProcess: state.activeProcess.operationType
+      }
+    })
+
+    this.store.mapDispatchToProps(this, {
+      close: callBack,
+      showConfirmation
+    })
+  }
 
   render() {
     return <div class="mdc-dialog mdc-dialog--open "
@@ -17,7 +38,7 @@ export class CheckoutOnline {
         <div class="mdc-dialog__surface">
           <div class="mdc-dialog__content" id="my-dialog-content">
             <div class="container">
-              <button class="mdc-icon-button material-icons close" data-mdc-dialog-action="close">close</button>
+              <button class="mdc-icon-button material-icons close" data-mdc-dialog-action="close" onClick={() => this.close('PROGRAM LIST')}>close</button>
 
               <div class="m16 mdc-typography mdc-typography--body2 center top48 b30">
                 Thanks for choose Weekly Program of Jurassic Lake. Now, we will request to you some information (and confirmation) for book your your trip. Please read info below and press confirm button.
@@ -59,7 +80,7 @@ export class CheckoutOnline {
           </div>
           <footer class="mdc-dialog__actions">
 
-            <button type="button" class="demo-button mdc-button mdc-button--outlined mdc-ripple-upgraded" data-mdc-dialog-action="accept">
+            <button type="button" class="demo-button mdc-button mdc-button--outlined mdc-ripple-upgraded" data-mdc-dialog-action="accept" onClick={() => this.showConfirmation()}>
               <span class="mdc-button__label">Finish</span>
             </button>
           </footer>

@@ -26,3 +26,50 @@ export const openPreReserve = (programId) => {
         })
     }
 }
+
+export const openSendEmailInfo = (programId) => { 
+    return dispatch => {
+        dispatch({
+            type: 'OPEN SEND EMAIL INFO',
+            payload: {
+                programId,
+                operationType: 'OPEN SEND EMAIL INFO'
+            }
+        })
+    }
+}
+
+export const openReserveNow = (programId) => { 
+    return dispatch => {
+        dispatch({
+            type: 'OPEN RESERVE NOW',
+            payload: {
+                programId,
+                operationType: 'OPEN RESERVE NOW'
+            }
+        })
+    }
+}
+
+export const showConfirmation = () => {
+    return dispatch => {
+        dispatch({
+            type: 'SHOW CONFIRMATION',
+            payload: {
+                operationType: 'SHOW CONFIRMATION'
+            }
+        })
+    }
+}
+
+export const sendInfoByEmail = (programId) => {
+    return dispatch => {
+        dispatch({
+            type: 'INFO EMAIL WAS SEND',
+            payload: {
+                programId,
+                operationType: 'INFO EMAIL WAS SEND'
+            }
+        })
+    }
+} 
