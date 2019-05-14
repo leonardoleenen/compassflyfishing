@@ -1,4 +1,4 @@
-import { Component, Prop,State } from '@stencil/core';
+import { Component, Prop,State, Element } from '@stencil/core';
 import {callBack,openSendEmailInfo,openReserveNow} from '../../actions';
 import { Store,Action } from '@stencil/redux';
 
@@ -6,11 +6,14 @@ import { Store,Action } from '@stencil/redux';
 @Component({
   tag: 'fl-prereserve',
   styleUrl: 'fl-prereserve.scss',
+  shadow: true
 })
 export class PreReserve {
 
   @Prop({ context: 'store' }) store: Store;
   @State() activeProcess: string
+  @State() openDrawer: boolean = false
+  @Element() el: HTMLElement
 
   close: Action 
   openSendEmailInfo: Action
@@ -33,20 +36,11 @@ export class PreReserve {
     })
   }
 
-  openDrawer() {
-    const drawer  = document.getElementsByClassName('drawer')[0]
-    drawer.classList.add('transition')
-    const surface =  document.getElementsByClassName('mdc-dialog__surface')[0] as HTMLElement
-    surface.style.backgroundColor="#ccc"
+  handleDrawer() {
+    this.openDrawer = !this.openDrawer
   }
 
-  closeDrawer() {
-    const drawer  = document.getElementsByClassName('drawer')[0]
-    drawer.classList.remove('transition')
-    const surface = document.getElementsByClassName('mdc-dialog__surface')[0] as HTMLElement
-    surface.style.backgroundColor="#fff"
-  }
-
+  
   render() {
     return <div class="mdc-dialog mdc-dialog--open "
       role="alertdialog"
@@ -54,7 +48,7 @@ export class PreReserve {
       aria-labelledby="my-dialog-title"
       aria-describedby="my-dialog-content">
       <div class="mdc-dialog__container">
-        <div class="mdc-dialog__surface">
+        <div class={!this.openDrawer ? 'mdc-dialog__surface' : 'mdc-dialog__surface disabled'}>
           <div class="mdc-dialog__content" id="my-dialog-content">
             <div class="container">
               <button class="mdc-icon-button material-icons close" data-mdc-dialog-action="close" onClick={() => this.close('PROGRAM LIST')}>close</button>
@@ -97,11 +91,11 @@ export class PreReserve {
           <footer class="mdc-dialog__actions">
           
 
-            <button type="button" class="demo-button mdc-button mdc-button--outlined mdc-ripple-upgraded" data-mdc-dialog-action="accept" onClick={this.openDrawer}>
+            <button type="button" class="demo-button mdc-button mdc-button--outlined mdc-ripple-upgraded" data-mdc-dialog-action="accept" onClick={() => this.handleDrawer()}>
               <span class="mdc-button__label">Continue</span>
             </button>
           </footer>
-          <div class="drawer">
+          <div class={this.openDrawer ? 'drawer transition' : 'drawer'}>
                 <ul class="command-list mdc-list">
                   <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0" onClick={() => this.openReserveNow()}>
                     <span class="mdc-list-item__graphic material-icons" aria-hidden="true">credit_card</span>
@@ -123,7 +117,7 @@ export class PreReserve {
                     <span class="mdc-list-item__graphic material-icons" aria-hidden="true">share</span>
                     Send this deal to a friend
                   </li>
-                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0"  onClick={this.closeDrawer}>
+                  <li class="mdc-list-item mdc-ripple-upgraded" tabindex="0"  onClick={() => this.handleDrawer()}>
                     <span class="mdc-list-item__graphic material-icons" aria-hidden="true">close</span>
                     Close
                   </li>

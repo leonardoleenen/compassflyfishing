@@ -1,4 +1,4 @@
-import { Component, Prop, State  } from '@stencil/core';
+import { Component, Prop, State, Element  } from '@stencil/core';
 import {openProgramCard} from '../../actions';
 import { Store, Action } from '@stencil/redux';
 import {favProgram} from '../../globals/database';
@@ -6,7 +6,8 @@ import {favProgram} from '../../globals/database';
 
 @Component({
     tag: 'fl-program-card',
-    styleUrl: 'fl-program-card.scss'
+    styleUrl: 'fl-program-card.scss',
+    shadow: true
 })
 export class FLProgramCard {
     @Prop({ context: 'store' }) store: Store;
@@ -17,7 +18,7 @@ export class FLProgramCard {
     @Prop() startingPrice: number
     @Prop() programId: string
     @Prop() callBack: string 
-     
+    @Element() el: HTMLElement;
 
     @State() favProgram: boolean=false
 
@@ -29,13 +30,13 @@ export class FLProgramCard {
 
     
     componentDidLoad() {
-        const el = document.getElementsByClassName(this.imageId)[0] as HTMLElement
+        const el = this.el.shadowRoot.querySelector('.' + this.imageId) as HTMLElement
         el.style.backgroundImage = 'url('+this.background +')'
     }
 
     async componentWillLoad() {
         await document.querySelector("fl-register").componentOnReady();
-        this.imageId = 'mdc-card__media mdc-card__media--16-9 demo-card__media image_backgrund' + this.programId
+        this.imageId = 'image_background' + this.programId
         this.favId = 'FAVID' + this.programId
 
         this.store.mapDispatchToProps(this, {
@@ -44,7 +45,7 @@ export class FLProgramCard {
     }
     
     componentDidUpdate = () => {
-       const el = document.getElementById(this.favId) as HTMLElement
+       const el = this.el.shadowRoot.getElementById(this.favId) as HTMLElement
        this.favProgram ? el.style.color = 'red' : el.style.color = 'white'
     }
 
@@ -63,7 +64,7 @@ export class FLProgramCard {
         return (
             <div class="mdc-card demo-card demo-basic-with-header">
                 <div class="mdc-card__primary-action demo-card__primary-action" tabindex="0">
-                    <div class={this.imageId} >
+                    <div class={'mdc-card__media mdc-card__media--16-9 demo-card__media image_background' + this.programId} >
                        <div class="app-fab--absolute white">
                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites" onClick={() => {
                            this.favProgram = favProgram(this.programId,this.favId)

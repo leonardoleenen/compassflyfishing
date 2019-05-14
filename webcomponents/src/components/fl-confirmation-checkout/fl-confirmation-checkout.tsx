@@ -1,4 +1,4 @@
-import { Component, Prop, State } from '@stencil/core';
+import { Component, Prop, State, Element } from '@stencil/core';
 import {callBack} from '../../actions';
 import { Store,Action } from '@stencil/redux';
 
@@ -6,12 +6,13 @@ import { Store,Action } from '@stencil/redux';
   tag: 'fl-confirmation-checkout',
   styleUrl: 'fl-confirmation-checkout.scss',
   shadow: true
-  
 })
 export class confirmationCheckout {
  
   @Prop({ context: 'store' }) store: Store;
   @State() activeProcess: string
+  @Element() el: HTMLElement
+
 
   close: Action 
 

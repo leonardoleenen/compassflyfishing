@@ -6,6 +6,7 @@ import { Store } from '@stencil/redux';
 @Component({
   tag: 'fl-program-list',
   styleUrl: 'fl-program-list.scss',
+  shadow: true
 })
 export class FLProgramList {
   @State() programs: Array<{}> =[]

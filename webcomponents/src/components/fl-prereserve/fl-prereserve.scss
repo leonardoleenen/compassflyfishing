@@ -1,4 +1,5 @@
 @import "@material/chips/mdc-chips";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
 .mdc-typography--headline6{
       color:$font-color4;
@@ -92,7 +93,7 @@ h1{
 }
 
 .disabled {
-    background-color: #cccccc
+    background-color: #cccccc !important
 }
 .mdc-icon-button {
     width: 24px;

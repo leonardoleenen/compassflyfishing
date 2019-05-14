@@ -4,7 +4,8 @@ import { Store,Action } from '@stencil/redux';
 
 @Component({
   tag: 'fl-program-detail',
-  styleUrl: 'fl-program-detail.scss'
+  styleUrl: 'fl-program-detail.scss',
+  shadow: true
 })
 export class FLProgramDetail {
   @Prop({ context: 'store' }) store: Store;
