@@ -1,13 +1,13 @@
 #images {
     width: 100%;
-    min-height: 250px;
+    min-height: 350px;
     overflow: hidden;
     position: relative;
-    max-height: 350px;
+    max-height: 450px;
   }
   #images img {
     width: 100%;
-    height: 100%;
+    height: auto;
     
     position: absolute;
     top: 0;
@@ -81,5 +81,12 @@
      .app-fab--absolute {
       top: 0;
       right: 1.5rem;
+    }
+    #images {
+      width: 100%;
+      min-height: 250px;
+      overflow: hidden;
+      position: relative;
+      max-height: 350px;
     }
   }
