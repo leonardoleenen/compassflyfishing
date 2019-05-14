@@ -1,7 +1,7 @@
 import { Component, Method, Prop } from '@stencil/core';
 import { Store } from '@stencil/redux';
 import {configureStore} from '../../store';
-
+import moment from 'moment';
 
 import {
   loadPrograms,
@@ -34,11 +34,11 @@ export class FLRegister {
   }
 
   componentWillLoad() {
+    window['m'] = moment
     this.store.setStore(configureStore({}));
   }
   
   render() {
-    console.log('render')
     return <slot/>;
   }
 }

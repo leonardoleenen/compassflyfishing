@@ -5,7 +5,9 @@ var db = new Dexie("flicktrip")
 
 db.version(0.1).stores({
     programs: 'id',
-    userSettings: 'userId'
+    userSettings: 'userId',
+    seasons: 'id',
+    availability: 'programId'
 });
 
 window['db'] = db
@@ -28,6 +30,37 @@ export const loadPrograms = async() => {
             photoCover: 'https://static.wixstatic.com/media/e71d9d_f8a8dfee06134821826ccca6cdee52bb~mv2.jpg/v1/fill/w_594,h_447,al_c,lg_1,q_80/strobel.webp'
         }
     ])
+
+    await db.availability.bulkPut([
+        {
+            programId: 'JLWP',
+            datesAvailable: [{
+                date: '20191015',
+                qty: 2
+            },
+            {
+                date: '20191022',
+                qty: 1
+            },
+            {
+                date: '20191030',
+                qty: 6
+            }]
+
+        },
+        {
+            programId: 'JLHW',
+            datesAvailable: [{
+                date: '20191015',
+                qty: 1
+            },
+            {
+                date: '20191022',
+                qty: 1
+            }]
+
+        }
+    ])
 }
 
 export const cleanDatabase = () => {
@@ -41,6 +74,11 @@ export  const fetchPrograms = async() => {
         }
     })
     return db.programs
+}
+
+export const fetchAvailability = (programId) => {
+    // return  db.availability.where('programId').equals(programId)
+    return db.availability.get(programId)
 }
 
 export const favProgram = async(programId,componentId) => {

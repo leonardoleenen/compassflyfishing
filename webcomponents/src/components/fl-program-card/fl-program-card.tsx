@@ -1,8 +1,8 @@
 import { Component, Prop, State, Element  } from '@stencil/core';
 import {openProgramCard} from '../../actions';
 import { Store, Action } from '@stencil/redux';
-import {favProgram} from '../../globals/database';
-
+import {favProgram,fetchAvailability} from '../../globals/database';
+import moment from 'moment'
 
 @Component({
     tag: 'fl-program-card',
@@ -21,8 +21,11 @@ export class FLProgramCard {
     @Element() el: HTMLElement;
 
     @State() favProgram: boolean=false
+    
 
     @State() showProgramDetail: boolean = false;
+
+    @State() availability: Array<any> = [] 
 
     imageId: string  
     favId: string 
@@ -42,6 +45,9 @@ export class FLProgramCard {
         this.store.mapDispatchToProps(this, {
             openCard: openProgramCard
           })
+
+        console.log(fetchAvailability(this.programId).then(r => this.availability = r.datesAvailable))
+        // fetchAvailability(this.programId).each(r => this.availability.push(r))
     }
     
     componentDidUpdate = () => {
@@ -61,6 +67,7 @@ export class FLProgramCard {
     }*/
 
     render() {
+        console.log(this.availability)
         return (
             <div class="mdc-card demo-card demo-basic-with-header">
                 <div class="mdc-card__primary-action demo-card__primary-action" tabindex="0">
@@ -81,13 +88,15 @@ export class FLProgramCard {
                     <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">Starting from ${this.startingPrice}</h3>
                     <div class="demo-card__secondary mdc-typography mdc-typography--body2" onClick={() => this.openCard(this.programId)}>{this.summary}</div>
                     <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Hot Dates</h2>
-                   
-                    <div class="mdc-chip" tabindex="0">
-                        <div class="mdc-chip__text">4 jan</div>
-                    </div>
-                    <div class="mdc-chip" tabindex="0">
-                        <div class="mdc-chip__text">5 apr</div>
-                    </div>
+
+                    {
+                        this.availability.map( d => (
+                            <div class="mdc-chip" tabindex="0">
+                                <div class="mdc-chip__text">{moment(d.date).format('D MMM')}</div>
+                            </div>
+                        ))
+                    }
+
                 </div> 
             </div>
         )
