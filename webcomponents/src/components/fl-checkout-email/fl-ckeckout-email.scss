@@ -18,17 +18,12 @@
       margin-top: 16px;
       margin-bottom:16px;
   }
-  .mdc-chip{
-      border-radius:7px;
-      display: inline-block;
-      min-height: 60px;
-  }
-  .blue{
-     color: $font-color4
-  }
-  .container{
-      padding: 24px;
-  }
+
+  .container { 
+    padding: 16px;
+}
+  
+ 
   ul{
     list-style-type: none;
     padding: 0px;
@@ -49,12 +44,16 @@
     margin-bottom: 16px;
 }
 
-.close{
-    padding: 0px;
-    height: 0px;
+.mdc-icon-button {
     width: 24px;
     height: 24px;
-    margin-top: 30px;
+    color:$font-color1;
+    margin-top: 0px;  
+}
+.close{
+    padding: 0px;
+    font-size: 30px;
+    margin-top: 0px;
 }
 .mdc-list{
     margin-top: 32px;
@@ -76,9 +75,7 @@
 .center{
     text-align: center;
 }
-.mtop30{
-    margin-top: 30%;
-}
+
 .mb20{
     margin-bottom: 24px;
 }
@@ -101,5 +98,15 @@
         padding-bottom: 24px;
         padding-top: 24px;
         margin-bottom: 30px;
+    }
+    .mtop30{
+        margin-top: 30%;
+    }
+    .close{
+        padding: 0px;
+        height: 0px;
+        width: 24px;
+        height: 24px;
+        margin-top: 30px;
     }
   }

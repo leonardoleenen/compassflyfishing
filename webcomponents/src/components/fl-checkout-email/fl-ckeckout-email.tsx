@@ -73,7 +73,7 @@ export class CheckoutEmail {
     </div>
           <footer class="mdc-dialog__actions">
            
-            <button type="button" class="demo-button mdc-button mdc-button--outlined mdc-ripple-upgraded" data-mdc-dialog-action="accept" onClick={() => this.sendInfoByEmail()}>
+            <button type="button" class="demo-button mdc-button mdc-ripple-upgraded" data-mdc-dialog-action="accept" onClick={() => this.sendInfoByEmail()}>
               <span class="mdc-button__label">Finish</span>
             </button>
           </footer>

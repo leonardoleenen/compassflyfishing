@@ -106,19 +106,14 @@ h1{
 
 .close{
     padding: 0px;
-    width: 24px;
-    height: 24px;
-    color:$font-color1;
-    margin-top: 30px;
+    font-size: 30px;
+    color:$font-color2;
+    margin-top: 0px;
 }
 .mdc-list{
     margin-top: 32px;
 }
-.mdc-dialog__actions{
-    justify-content: center;
-    padding-bottom: 24px;
-    padding-top: 24px;
-}
+
 .text{
     margin-left: 12px;
     width: 80%;
@@ -128,6 +123,27 @@ h1{
     padding-left: 16px;
     margin-top: 0px;
     height: auto;
+    cursor: pointer;
+}
+
+
+.mr32{
+    margin-right: 32px;
+}
+.mdc-typography--headline1{
+    font-size: 40px;
+    font-weight: 600;
+    color: $font-color1;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    line-height: 50px;
+}
+.mdc-typography--headline2{
+    font-size: 30px;
+    font-weight: 800;
+    color: $font-color2;
+    margin-top: 0px;
+    margin-bottom: 0px
 }
 @media (max-width: 592px){
     .mdc-dialog .mdc-dialog__surface {
@@ -138,7 +154,6 @@ h1{
         min-height: calc(100vh);
     }
     .mdc-dialog__actions{
-        justify-content: center;
         padding-bottom: 24px;
         padding-top: 24px;
         margin-bottom: 30px;
@@ -147,6 +162,13 @@ h1{
         width: 24px;
         height: 24px;
         padding: 0px;}
+    .close{
+            padding: 0px;
+            width: 24px;
+            height: 24px;
+            color:$font-color3;
+            margin-top: 30px;
+        }
 
     
   }
