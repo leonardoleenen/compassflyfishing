@@ -27,12 +27,17 @@
 .mdc-typography--headline6{
   margin-bottom: 0px;
   margin-top: 10px;
-  text-overflow: initial
+  text-overflow: initial;
+  color: $font-color2;
  
 }
 .mdc-typography--body2{
   font-size: 12px;
   white-space: pre-wrap;
+  color: $font-color2;
+}
+.blue{
+  color: $font-color4;
 }
 .app-fab--absolute {
   position: absolute;

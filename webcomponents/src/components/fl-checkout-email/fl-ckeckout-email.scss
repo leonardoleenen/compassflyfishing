@@ -44,17 +44,6 @@
     margin-bottom: 16px;
 }
 
-.mdc-icon-button {
-    width: 24px;
-    height: 24px;
-    color:$font-color1;
-    margin-top: 0px;  
-}
-.close{
-    padding: 0px;
-    font-size: 30px;
-    margin-top: 0px;
-}
 .mdc-list{
     margin-top: 32px;
 }
@@ -83,7 +72,23 @@
     background: $mdc-theme-secondary;
     border-radius: 4px;
 }
+.mdc-icon-button {
+    width: 24px;
+    height: 24px;
+    color:$font-color1;
+    margin-top: 30px;  
+}
 
+
+
+.close{
+    padding: 0px !important;
+    font-size: 30px !important;
+    color:$font-color2;
+    margin-top: 0px; 
+    width: 24px !important;
+    height: 24px !important;
+}
 
 @media (max-width: 592px){
     .mdc-dialog .mdc-dialog__surface {
@@ -109,4 +114,5 @@
         height: 24px;
         margin-top: 30px;
     }
+    
   }

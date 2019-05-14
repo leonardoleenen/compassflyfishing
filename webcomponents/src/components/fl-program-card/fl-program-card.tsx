@@ -80,7 +80,7 @@ export class FLProgramCard {
                     <fl-program-rating></fl-program-rating>
                     <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">Starting from ${this.startingPrice}</h3>
                     <div class="demo-card__secondary mdc-typography mdc-typography--body2" onClick={() => this.openCard(this.programId)}>{this.summary}</div>
-                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Hot Dates</h2>
+                    <h2 class="demo-card__title mdc-typography mdc-typography--headline6 blue">Hot Dates</h2>
                    
                     <div class="mdc-chip" tabindex="0">
                         <div class="mdc-chip__text">4 jan</div>
